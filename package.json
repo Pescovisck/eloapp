@@ -7,17 +7,19 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "chokidar": "^3.4.3",
+    "chokidar-cli": "^2.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start && less-app && watch-less",
+    "start": "npm-run-all --parallel start-js less-app watch-less",
+    "start-js": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "less-app": "lessc index.less index.css",
+    "less-app": "lessc src/index.less src/index.css",
     "watch-less": "chokidar \"src/*.less\" -c \"yarn run less-app\""
   },
   "eslintConfig": {
@@ -37,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }

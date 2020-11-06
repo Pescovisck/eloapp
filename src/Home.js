@@ -5,7 +5,9 @@ function Home() {
   return (
     <div className="Home">
       <Header></Header>
-      <Introduction></Introduction>
+      <div className="content">
+        <Introduction></Introduction>
+      </div>
     </div>
   );
 }
